@@ -13,7 +13,21 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+
+
+        //------------------------------------------------------------Planning------------------------------------------------------------
+        // 1. Create an array of doubles with the size of 'length'
+        // 2. Use a for loop to iterate from 0 to length - 1
+        // 3. Inside the loop, calculate the multiple by multiplying 'number' with (i + 1) where i is the current index
+        // 4. Assign the calculated multiple to the current index of the array
+
+        var results = new double[length];
+        for (var i = 0; i < length; i++)
+        {
+            results[i] = number * (i + 1);
+        }
+
+        return results; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +43,28 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+
+
+
+
+        //------------------------------------------------------------Planning------------------------------------------------------------
+        // 1. Create a new list to hold the rotated values 
+        // 2. Use a for loop to iterate through the original list
+        // 3. Store the last 'amount' elements in the new list first
+        // 4. Insert 'amount' elements at the beginning of the new list
+        // 5. Return modified original list
+
+        var rotated = new List<int>();
+        for (var i = data.Count - amount; i < data.Count; i++)
+        {
+            rotated.Add(data[i]);
+        }
+        for (var i = 0; i < data.Count - amount; i++)
+        {
+            rotated.Add(data[i]);
+        }
+        data.Clear();
+        data.AddRange(rotated);
+
     }
 }
